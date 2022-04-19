@@ -1,0 +1,514 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF21D5A9-BF7F-4325-BC3F-EE231E59C961}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoSitios</RootNamespace>
+    <AssemblyName>ProyectoSitios</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=107.3.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.107.3.0\lib\netstandard2.0\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.6.0.1\lib\net461\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bulma.css" />
+    <Content Include="css\bulma2.css" />
+    <Content Include="css\bulma1.css" />
+    <Content Include="img\1.png" />
+    <Content Include="img\10.2.jpg" />
+    <Content Include="img\10.2.png" />
+    <Content Include="img\11.2.png" />
+    <Content Include="img\11.3.png" />
+    <Content Include="img\11.4.png" />
+    <Content Include="img\11.png" />
+    <Content Include="img\2.png" />
+    <Content Include="img\20.png" />
+    <Content Include="img\30.png" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.png" />
+    <Content Include="img\anota.png" />
+    <Content Include="img\arrow.png" />
+    <Content Include="img\beneficios.png" />
+    <Content Include="img\busqueda.png" />
+    <Content Include="img\c.png" />
+    <Content Include="img\calcu.png" />
+    <Content Include="img\calcu1.png" />
+    <Content Include="img\calculadora.png" />
+    <Content Include="img\carros.png" />
+    <Content Include="img\casa.png" />
+    <Content Include="img\confirma.png" />
+    <Content Include="img\coorporativo.jpg" />
+    <Content Include="img\corazon.png" />
+    <Content Include="img\corporativo.jpg" />
+    <Content Include="img\correo.png" />
+    <Content Include="img\correo2.png" />
+    <Content Include="img\credito-de-nomina-que-es-portada1_preview_rev_1.png" />
+    <Content Include="img\dinero.png" />
+    <Content Include="img\Direccion.png" />
+    <Content Include="img\editar.png" />
+    <Content Include="img\eliminar.png" />
+    <Content Include="img\Fondo.jpg" />
+    <Content Include="img\fondoCalc.jpg" />
+    <Content Include="img\fondocorporativo.jpg" />
+    <Content Include="img\FondoPP.jpg" />
+    <Content Include="img\fondopyme.jpg" />
+    <Content Include="img\fondot.png" />
+    <Content Include="img\fondo_corporativos.png" />
+    <Content Include="img\fondo_pymes.png" />
+    <Content Include="img\fondo_requisitos.png" />
+    <Content Include="img\fondo_requisitos1.png" />
+    <Content Include="img\hexagono.png" />
+    <Content Include="img\hexagono1.png" />
+    <Content Include="img\IAC.png" />
+    <Content Include="img\IAS.png" />
+    <Content Include="img\IASS.png" />
+    <Content Include="img\icono.png" />
+    <Content Include="img\icono1.png" />
+    <Content Include="img\icono2.png" />
+    <Content Include="img\iconoblanco.png" />
+    <Content Include="img\ICU.png" />
+    <Content Include="img\ICUSER.png" />
+    <Content Include="img\IES.png" />
+    <Content Include="img\IGP.png" />
+    <Content Include="img\incognito.png" />
+    <Content Include="img\IPI.png" />
+    <Content Include="img\IRU.png" />
+    <Content Include="img\login.png" />
+    <Content Include="img\logo.jpeg" />
+    <Content Include="img\Mascara.jpg" />
+    <Content Include="img\Mascara1.jpg" />
+    <Content Include="img\monitor.png" />
+    <Content Include="img\mujer.png" />
+    <Content Include="img\mujer1.png" />
+    <Content Include="img\nacionalidad.png" />
+    <Content Include="img\nombre.png" />
+    <Content Include="img\pass.png" />
+    <Content Include="img\PCorporativo.png" />
+    <Content Include="img\PPYMES.png" />
+    <Content Include="img\primerlugar.png" />
+    <Content Include="img\pyme.jpg" />
+    <Content Include="img\pymes.jpg" />
+    <Content Include="img\registrado.png" />
+    <Content Include="img\requisitos1.jpg" />
+    <Content Include="img\requisitosvertical.png" />
+    <Content Include="img\salud.jpg" />
+    <Content Include="img\salud.png" />
+    <Content Include="img\segundo.png" />
+    <Content Include="img\tasa.png" />
+    <Content Include="img\tel.png" />
+    <Content Include="img\telefono.png" />
+    <Content Include="img\tercero.png" />
+    <Content Include="img\usuario.png" />
+    <Content Include="img\usuario2.png" />
+    <Content Include="img\vehiculo.jpg" />
+    <Content Include="img\VistaInformacion.png" />
+    <Content Include="img\vivienda.jpg" />
+    <Content Include="Pages\aprobacioncreditos.aspx" />
+    <Content Include="Pages\CalcularPrestamos.aspx" />
+    <Content Include="Pages\ConfiguracionRoles.aspx" />
+    <Content Include="Pages\ConfiguracionUsuarios.aspx" />
+    <Content Include="Pages\FormularioC.aspx" />
+    <Content Include="Pages\FormularioE.aspx" />
+    <Content Include="Pages\FormularioP.aspx" />
+    <Content Include="Pages\FormularioRegistro.aspx" />
+    <Content Include="Pages\GraficoIndicadores.aspx" />
+    <Content Include="Pages\HeaderFooter.aspx" />
+    <Content Include="Pages\Index.aspx" />
+    <Content Include="Pages\login.aspx" />
+    <Content Include="Pages\PanelAdministrativoAnalista.aspx" />
+    <Content Include="Pages\PanelAdministrativoTramitador.aspx" />
+    <Content Include="Pages\PConfiguracionG.aspx" />
+    <Content Include="Pages\PrestamoPersonal.aspx" />
+    <Content Include="Pages\prestamos.aspx" />
+    <Content Include="Pages\PrestamosCoorporativos.aspx" />
+    <Content Include="Pages\PrestamoPyme.aspx" />
+    <Content Include="Pages\PrestamosCorporativo.aspx" />
+    <Content Include="Pages\PrestamosPymes.aspx" />
+    <Content Include="Pages\PrestamosSalud.aspx" />
+    <Content Include="Pages\PrestamosVehiculo.aspx" />
+    <Content Include="Pages\PrestamosVivienda.aspx" />
+    <Content Include="Pages\solicitudestramitar.aspx" />
+    <Content Include="Pages\tendencias.aspx" />
+    <Content Include="Pages\vistasinfo.aspx" />
+    <Content Include="Pages\VistasInformacion.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\aprobacioncreditos.aspx.cs">
+      <DependentUpon>aprobacioncreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\aprobacioncreditos.aspx.designer.cs">
+      <DependentUpon>aprobacioncreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CalcularPrestamos.aspx.cs">
+      <DependentUpon>CalcularPrestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CalcularPrestamos.aspx.designer.cs">
+      <DependentUpon>CalcularPrestamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConfiguracionRoles.aspx.cs">
+      <DependentUpon>ConfiguracionRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConfiguracionRoles.aspx.designer.cs">
+      <DependentUpon>ConfiguracionRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConfiguracionUsuarios.aspx.cs">
+      <DependentUpon>ConfiguracionUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConfiguracionUsuarios.aspx.designer.cs">
+      <DependentUpon>ConfiguracionUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormularioC.aspx.cs">
+      <DependentUpon>FormularioC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormularioC.aspx.designer.cs">
+      <DependentUpon>FormularioC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormularioE.aspx.cs">
+      <DependentUpon>FormularioE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormularioE.aspx.designer.cs">
+      <DependentUpon>FormularioE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormularioP.aspx.cs">
+      <DependentUpon>FormularioP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormularioP.aspx.designer.cs">
+      <DependentUpon>FormularioP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormularioRegistro.aspx.cs">
+      <DependentUpon>FormularioRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FormularioRegistro.aspx.designer.cs">
+      <DependentUpon>FormularioRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GraficoIndicadores.aspx.cs">
+      <DependentUpon>GraficoIndicadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GraficoIndicadores.aspx.designer.cs">
+      <DependentUpon>GraficoIndicadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HeaderFooter.aspx.cs">
+      <DependentUpon>HeaderFooter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\HeaderFooter.aspx.designer.cs">
+      <DependentUpon>HeaderFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PanelAdministrativoAnalista.aspx.cs">
+      <DependentUpon>PanelAdministrativoAnalista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PanelAdministrativoAnalista.aspx.designer.cs">
+      <DependentUpon>PanelAdministrativoAnalista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PanelAdministrativoTramitador.aspx.cs">
+      <DependentUpon>PanelAdministrativoTramitador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PanelAdministrativoTramitador.aspx.designer.cs">
+      <DependentUpon>PanelAdministrativoTramitador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PConfiguracionG.aspx.cs">
+      <DependentUpon>PConfiguracionG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PConfiguracionG.aspx.designer.cs">
+      <DependentUpon>PConfiguracionG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamoPersonal.aspx.cs">
+      <DependentUpon>PrestamoPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamoPersonal.aspx.designer.cs">
+      <DependentUpon>PrestamoPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\prestamos.aspx.cs">
+      <DependentUpon>prestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\prestamos.aspx.designer.cs">
+      <DependentUpon>prestamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamosCoorporativos.aspx.cs">
+      <DependentUpon>PrestamosCoorporativos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamosCoorporativos.aspx.designer.cs">
+      <DependentUpon>PrestamosCoorporativos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamoPyme.aspx.cs">
+      <DependentUpon>PrestamoPyme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamoPyme.aspx.designer.cs">
+      <DependentUpon>PrestamoPyme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamosCorporativo.aspx.cs">
+      <DependentUpon>PrestamosCorporativo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamosCorporativo.aspx.designer.cs">
+      <DependentUpon>PrestamosCorporativo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamosPymes.aspx.cs">
+      <DependentUpon>PrestamosPymes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamosPymes.aspx.designer.cs">
+      <DependentUpon>PrestamosPymes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamosSalud.aspx.cs">
+      <DependentUpon>PrestamosSalud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamosSalud.aspx.designer.cs">
+      <DependentUpon>PrestamosSalud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamosVehiculo.aspx.cs">
+      <DependentUpon>PrestamosVehiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamosVehiculo.aspx.designer.cs">
+      <DependentUpon>PrestamosVehiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestamosVivienda.aspx.cs">
+      <DependentUpon>PrestamosVivienda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrestamosVivienda.aspx.designer.cs">
+      <DependentUpon>PrestamosVivienda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\solicitudestramitar.aspx.cs">
+      <DependentUpon>solicitudestramitar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\solicitudestramitar.aspx.designer.cs">
+      <DependentUpon>solicitudestramitar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\tendencias.aspx.cs">
+      <DependentUpon>tendencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\tendencias.aspx.designer.cs">
+      <DependentUpon>tendencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\vistasinfo.aspx.cs">
+      <DependentUpon>vistasinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\vistasinfo.aspx.designer.cs">
+      <DependentUpon>vistasinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VistasInformacion.aspx.cs">
+      <DependentUpon>VistasInformacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VistasInformacion.aspx.designer.cs">
+      <DependentUpon>VistasInformacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\corporativo.webp" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{4059d36e-e603-4326-9dc1-82b7cdc87eb3}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{0d5ba50d-b424-475a-a79a-35265e60ea60}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55100</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
